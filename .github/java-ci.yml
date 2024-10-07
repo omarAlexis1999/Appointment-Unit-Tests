@@ -1,0 +1,25 @@
+name: Java CI
+
+on:
+  push:
+    branches:
+      - master  # Ejecutar el workflow en push a la rama master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Usar el último Ubuntu como entorno
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Clonar el repositorio
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'  # Establecer Java 11
+
+      - name: Build with Gradle
+        run: ./gradlew build  # Ejecutar el comando de build para Gradle
+
+      - name: Run unit tests
+        run: ./gradlew test  # Ejecutar pruebas unitarias
