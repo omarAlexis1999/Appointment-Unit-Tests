@@ -19,6 +19,9 @@ jobs:
           java-version: '11'  # Establecer Java 11
           distribution: 'temurin'
 
+      - name: Grant execute permission to gradlew
+        run: chmod +x ./gradlew
+
       - name: Build with Gradle
         run: ./gradlew build  # Ejecutar el comando de build para Gradle
 
