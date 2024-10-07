@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'  # Establecer Java 11
-          distribution: 'corretto'
+          distribution: 'temurin'
 
       - name: Build with Gradle
         run: ./gradlew build  # Ejecutar el comando de build para Gradle
